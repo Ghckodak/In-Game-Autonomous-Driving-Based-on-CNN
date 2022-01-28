@@ -1,6 +1,6 @@
 # In-Game-Autonomous-Driving-Based-on-CNN
 
-<iframe width="787" height="556" src="https://www.youtube.com/embed/R2gP6NiPhMU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Demo: https://youtu.be/R2gP6NiPhMU
 
 ## Inspiration
 Autonomous driving is one of the hottest fields these days. However, learners/beginners may find it difficult to explore it and try out because it needs a modified real car. So why not use driving simulation games to try it?
