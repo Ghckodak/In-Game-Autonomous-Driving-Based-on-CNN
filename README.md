@@ -9,6 +9,26 @@ Just like a real autonomous driving car does - It grabs the images of the surrou
 ## How we built it
 I use win32 api to grab the screen and record the actions on the keyboard. These information are used as training data for the CNN. The CNN is based on Tensorflow and training on Google Colab using Google Cloud services.
 
+This is an sample input. A grayscale image with two labels indicating throttle ansd steering.
+
+![](https://s2.loli.net/2022/01/16/72jagDhCbFyZV1k.png)
+
+By plotting the bar graph of the data distribution, I find the data is not balanced. Most data has the same label [1,0] which means most of the time, the truck is moving staright. It is resonable in real life but in machine learning it is bad as it will mislead the model. 
+
+![](https://s2.loli.net/2022/01/16/3EWuvbc4yZ6mOpe.png)
+
+The problem can be solved by randomly drop some images. I dropped 70% of them in this case. Here is the final result:
+
+![](https://s2.loli.net/2022/01/16/JhXlmDRvb9Bf2sU.png)
+
+For the remaining image, some transformation can be done to expand the training data size and increases the noise resistibility of the model. For example, flip some image to simulate right/left turns and change the image brightness to simulate night/days.
+
+![](https://s2.loli.net/2022/01/16/mzvLuiQVOA4PXej.png)
+
+The graph below shows the training/validation accuracy/loss of the final model. Notice that the validation accuracy curve is not flat yet so the model can be further trained for better performance. 
+
+![](https://s2.loli.net/2022/01/16/3JiT2cRvFz9Zabo.png)
+
 ## Challenges we ran into
 As there is not enough data for the CNN, overfitting occurs. I add some tranformations on the inout data and some dropout layers to fix it.
 
